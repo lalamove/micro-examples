@@ -19,9 +19,9 @@ const (
 	clientKey  = "certs/client.key"
 )
 
-/***********************************************************************************************
-	Client connect to tls grpc server, note that our demo server's name is "server"
-***********************************************************************************************/
+/******************************************************************************
+Client connect to tls grpc server, note that our demo server's name is "server"
+******************************************************************************/
 func main() {
 	ctx, cancel := context.WithTimeout(
 		context.Background(),

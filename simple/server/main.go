@@ -13,7 +13,7 @@ import (
 	"google.golang.org/grpc"
 )
 
-// Greeter - implementation of GreeterServer
+// Greeter implements GreeterServer
 type Greeter struct {
 }
 
@@ -29,9 +29,9 @@ func (s *Greeter) SayHello(
 
 var _ proto.GreeterServer = (*Greeter)(nil) // make sure it implements the interface
 
-/***********************************************************************************************
-	Simple insecure server
-***********************************************************************************************/
+/******************************************************************************
+Simple insecure server
+******************************************************************************/
 func main() {
 
 	reverseProxyFunc := func(

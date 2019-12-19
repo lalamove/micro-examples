@@ -16,7 +16,7 @@ import (
 	"google.golang.org/grpc/credentials"
 )
 
-// Greeter - implementation of GreeterServer
+// Greeter implements GreeterServer
 type Greeter struct {
 }
 
@@ -39,9 +39,9 @@ var (
 	ca         = "certs/ca.crt"
 )
 
-/***********************************************************************************************
-	Mutual tls server with certificate authority
-************************************************************************************************/
+/******************************************************************************
+Mutual tls server with certificate authority
+******************************************************************************/
 func main() {
 
 	reverseProxyFunc := func(

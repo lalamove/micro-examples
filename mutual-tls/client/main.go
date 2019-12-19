@@ -24,7 +24,7 @@ const (
 )
 
 /***********************************************************************************************
-	Client connect to mutual tls grpc server with certificate authority
+Client connect to mutual tls grpc server with certificate authority
 ************************************************************************************************/
 func main() {
 	ctx, cancel := context.WithTimeout(

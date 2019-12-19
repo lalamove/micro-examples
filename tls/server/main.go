@@ -14,7 +14,7 @@ import (
 	"google.golang.org/grpc/credentials"
 )
 
-// Greeter - implementation of GreeterServer
+// Greeter implements of GreeterServer
 type Greeter struct {
 }
 
@@ -36,9 +36,10 @@ var (
 	key        = "certs/server.key"
 )
 
-/***********************************************************************************************
-tls server with server-side encryption that does not expect client authentication or credentials
-************************************************************************************************/
+/******************************************************************************
+tls server with server-side encryption that does not expect client
+authentication or credentials
+*******************************************************************************/
 func main() {
 
 	reverseProxyFunc := func(
