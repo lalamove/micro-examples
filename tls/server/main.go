@@ -83,12 +83,12 @@ func main() {
 	}
 
 	s := micro.NewService(
-		micro.Debug(true),
 		micro.RouteOpt(route),
 		micro.ShutdownFunc(sf),
 		micro.Redoc(redoc),
 		micro.GRPCServerOption(grpc.Creds(serverCreds)),
 		micro.GRPCDialOption(grpc.WithTransportCredentials(clientCreds)),
+		micro.WithLogger(micro.LoggerFunc(log.Printf)),
 	)
 	proto.RegisterGreeterServer(s.GRPCServer, &Greeter{})
 

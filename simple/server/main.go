@@ -64,10 +64,10 @@ func main() {
 	redoc.AddSpec("Greeter", "/hello.swagger.json")
 
 	s := micro.NewService(
-		micro.Debug(true),
 		micro.RouteOpt(route),
 		micro.ShutdownFunc(sf),
 		micro.Redoc(redoc),
+		micro.WithLogger(micro.LoggerFunc(log.Printf)),
 	)
 	proto.RegisterGreeterServer(s.GRPCServer, &Greeter{})
 
